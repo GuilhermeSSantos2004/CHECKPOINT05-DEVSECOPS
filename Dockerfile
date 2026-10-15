@@ -1,5 +1,6 @@
-FROM nginxinc/nginx-unprivileged:stable-alpine
+# Imagem antiga usada SOMENTE para provar o bloqueio do Trivy no CP05.
+FROM nginx:1.14.2
 
-COPY --chown=101:101 site/ /usr/share/nginx/html/
+COPY site/ /usr/share/nginx/html/
 
-EXPOSE 8080
+EXPOSE 80
