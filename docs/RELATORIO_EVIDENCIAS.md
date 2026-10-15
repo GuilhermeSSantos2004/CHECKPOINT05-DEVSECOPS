@@ -1,5 +1,15 @@
 # CP05 - Relatório de Evidências do Pipeline DevSecOps
 
+## Integrantes
+
+| Nome | RM |
+|---|---:|
+| Guilherme Silva dos Santos | 551168 |
+| Enricco Rossi de Souza Carvalho Miranda | 551717 |
+| Gabriel Marquez Trevisan | 99227 |
+| Danilo Urze Aldred | 99465 |
+| Laura Claro Mathias | 98747 |
+
 ## Objetivo
 
 O pipeline foi criado para impedir três classes de risco antes da entrega:
@@ -13,7 +23,7 @@ O workflow está em `.github/workflows/security.yml` e executa **Gitleaks, Semgr
 ## 1. Pipeline limpo
 
 **Branch:** `main`  
-**Run:** [#6](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662611345)  
+**Run:** [#12](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38663076725)  
 **Resultado:** SUCCESS
 
 Os três jobs terminaram com sucesso. No Trivy, a imagem baseada em Alpine 3.24.2 apresentou **0 vulnerabilidades** dentro da política configurada.

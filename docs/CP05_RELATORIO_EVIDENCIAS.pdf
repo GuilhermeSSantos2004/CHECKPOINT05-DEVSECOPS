@@ -18,35 +18,35 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
-<< /Length 1217 >>
+<< /Length 1307 >>
 stream
 BT /F2 22 Tf 120 790 Td (CHECKPOINT 05 - DEVSECOPS) Tj ET
 BT /F1 12 Tf 145 765 Td (Pipeline DevSecOps Completo - Relatorio de Evidencias) Tj ET
 50 748 m 545 748 l S
 BT /F2 14 Tf 50 715 Td (Integrantes) Tj ET
-BT /F1 10 Tf 65 690 Td (Guilherme Santos - RM 551168) Tj ET
-BT /F1 10 Tf 65 672 Td (Enricco - RM 551717) Tj ET
-BT /F1 10 Tf 65 654 Td (Gabriel - RM 99227) Tj ET
-BT /F1 10 Tf 65 636 Td (Danilo - RM 99465) Tj ET
-BT /F1 10 Tf 65 618 Td (Laura - RM 98747) Tj ET
-BT /F2 14 Tf 50 575 Td (Objetivo) Tj ET
-BT /F1 10 Tf 50 552 Td (Bloquear segredos, codigo vulneravel e imagem Docker com CVE CRITICAL.) Tj ET
-BT /F1 10 Tf 50 534 Td (Jobs: Gitleaks \(secret scanning\), Semgrep \(SAST\) e Trivy \(container scan\).) Tj ET
-BT /F2 14 Tf 50 495 Td (Execucoes) Tj ET
-BT /F1 9 Tf 65 470 Td (Run #6  main                  SUCCESS  - 3 jobs aprovados) Tj ET
-BT /F1 9 Tf 65 450 Td (Run #9  gitleaks-sabotage     FAILURE  - 2 leaks encontrados) Tj ET
-BT /F1 9 Tf 65 430 Td (Run #8  semgrep-sabotage      FAILURE  - 1 finding bloqueante) Tj ET
-BT /F1 9 Tf 65 410 Td (Run #11 trivy-sabotage        FAILURE  - 27 CVEs CRITICAL) Tj ET
-BT /F2 12 Tf 50 360 Td (Links completos estao no README e em docs/RELATORIO_EVIDENCIAS.md) Tj ET
+BT /F1 9.5 Tf 65 690 Td (Guilherme Silva dos Santos - RM 551168) Tj ET
+BT /F1 9.5 Tf 65 671 Td (Enricco Rossi de Souza Carvalho Miranda - RM 551717) Tj ET
+BT /F1 9.5 Tf 65 652 Td (Gabriel Marquez Trevisan - RM 99227) Tj ET
+BT /F1 9.5 Tf 65 633 Td (Danilo Urze Aldred - RM 99465) Tj ET
+BT /F1 9.5 Tf 65 614 Td (Laura Claro Mathias - RM 98747) Tj ET
+BT /F2 14 Tf 50 570 Td (Objetivo) Tj ET
+BT /F1 10 Tf 50 547 Td (Bloquear segredos, codigo vulneravel e imagem Docker com CVE CRITICAL.) Tj ET
+BT /F1 10 Tf 50 529 Td (Jobs: Gitleaks \(secret scanning\), Semgrep \(SAST\) e Trivy \(container scan\).) Tj ET
+BT /F2 14 Tf 50 490 Td (Execucoes) Tj ET
+BT /F1 9 Tf 65 465 Td (Run #12 main final            SUCCESS  - 3 jobs aprovados) Tj ET
+BT /F1 9 Tf 65 445 Td (Run #9  gitleaks-sabotage     FAILURE  - 2 leaks encontrados) Tj ET
+BT /F1 9 Tf 65 425 Td (Run #8  semgrep-sabotage      FAILURE  - 1 finding bloqueante) Tj ET
+BT /F1 9 Tf 65 405 Td (Run #11 trivy-sabotage        FAILURE  - 27 CVEs CRITICAL) Tj ET
+BT /F2 12 Tf 50 355 Td (Links completos estao no README e em docs/RELATORIO_EVIDENCIAS.md) Tj ET
 endstream
 endobj
 8 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
 endobj
 9 0 obj
-<< /Length 671 >>
+<< /Length 617 >>
 stream
-BT /F2 18 Tf 50 790 Td (Pipeline limpo - main - Run #6) Tj ET
+BT /F2 18 Tf 50 790 Td (Pipeline limpo - main - Run #12) Tj ET
 BT /F1 10 Tf 50 766 Td (Resultado: SUCCESS. As tres barreiras foram aprovadas.) Tj ET
 q 0.04 0.06 0.08 rg 48 115 500 470 re f Q
 0.20 0.24 0.28 RG 48 115 500 470 re S
@@ -54,9 +54,8 @@ BT /F3 9 Tf 62 545 Td (Gitleaks - Secret Scanning ........ SUCCESS) Tj ET
 BT /F3 9 Tf 62 527 Td (Semgrep - SAST .................... SUCCESS) Tj ET
 BT /F3 9 Tf 62 509 Td (Trivy - Container CVE Scan ........ SUCCESS) Tj ET
 BT /F3 9 Tf 62 491 Td () Tj ET
-BT /F3 9 Tf 62 473 Td (Target: cp05-devsecops \(alpine 3.24.2\)) Tj ET
-BT /F3 9 Tf 62 455 Td (Vulnerabilities: 0) Tj ET
-BT /F3 9 Tf 62 437 Td (Clean \(no security findings detected\)) Tj ET
+BT /F3 9 Tf 62 473 Td (Resultado final da main: pipeline aprovado) Tj ET
+BT /F3 9 Tf 62 455 Td (Nenhum gate de seguranca falhou) Tj ET
 endstream
 endobj
 10 0 obj
@@ -136,16 +135,16 @@ xref
 0000000287 00000 n 
 0000000355 00000 n 
 0000000501 00000 n 
-0000001769 00000 n 
-0000001915 00000 n 
-0000002636 00000 n 
-0000002784 00000 n 
-0000003684 00000 n 
-0000003832 00000 n 
-0000004588 00000 n 
-0000004736 00000 n 
+0000001859 00000 n 
+0000002005 00000 n 
+0000002672 00000 n 
+0000002820 00000 n 
+0000003720 00000 n 
+0000003868 00000 n 
+0000004624 00000 n 
+0000004772 00000 n 
 trailer
 << /Size 16 /Root 1 0 R >>
 startxref
-5637
+5673
 %%EOF

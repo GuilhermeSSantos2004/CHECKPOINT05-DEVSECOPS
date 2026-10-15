@@ -10,11 +10,11 @@ O projeto implementa um pipeline obrigatório capaz de barrar **segredos**, **c�
 
 | Nome | RM |
 |---|---:|
-| Guilherme Santos | 551168 |
-| Enricco | 551717 |
-| Gabriel | 99227 |
-| Danilo | 99465 |
-| Laura | 98747 |
+| Guilherme Silva dos Santos | 551168 |
+| Enricco Rossi de Souza Carvalho Miranda | 551717 |
+| Gabriel Marquez Trevisan | 99227 |
+| Danilo Urze Aldred | 99465 |
+| Laura Claro Mathias | 98747 |
 
 ## Pipeline
 
@@ -28,7 +28,7 @@ O workflow [`.github/workflows/security.yml`](.github/workflows/security.yml) ex
 
 A execução limpa da `main` passou nos três jobs:
 
-- [Run #6 - main limpa](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662611345)
+- [Run #12 - main final limpa](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38663076725)
 
 As sabotagens foram mantidas em branches separadas para preservar a `main` segura:
 
