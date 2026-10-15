@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Checkpoint 05 - Pipeline DevSecOps">
+  <title>CP05 | DevSecOps Security Pipeline</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <span class="eyebrow">FIAP · Engenharia de Software</span>
+      <h1>Pipeline DevSecOps</h1>
+      <p class="lead">
+        Segurança automatizada antes da entrega: segredo vazado, código vulnerável
+        ou imagem crítica não passam pelo pipeline.
+      </p>
+      <div class="status" aria-live="polite">
+        <span class="dot"></span>
+        <span id="pipeline-status">3 barreiras ativas</span>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Barreiras de segurança">
+      <article class="card">
+        <span class="number">01</span>
+        <h2>Gitleaks</h2>
+        <p>Detecta tokens, chaves e credenciais versionadas por engano.</p>
+        <strong>Secret scanning</strong>
+      </article>
+
+      <article class="card">
+        <span class="number">02</span>
+        <h2>Semgrep</h2>
+        <p>Analisa o código estaticamente e bloqueia padrões inseguros, como <code>eval()</code>.</p>
+        <strong>SAST</strong>
+      </article>
+
+      <article class="card">
+        <span class="number">03</span>
+        <h2>Trivy</h2>
+        <p>Constrói e verifica a imagem Docker, barrando vulnerabilidades críticas.</p>
+        <strong>Container scanning</strong>
+      </article>
+    </section>
+
+    <section class="proof">
+      <div>
+        <span class="eyebrow">Sabotagem controlada</span>
+        <h2>O pipeline precisa provar que bloqueia.</h2>
+      </div>
+      <p>
+        As branches de teste introduzem falhas intencionais e seguras.
+        A branch principal permanece limpa para entrega.
+      </p>
+    </section>
+
+    <footer>
+      <span>CHECKPOINT 05 · DEVSECOPS</span>
+      <span id="year"></span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
