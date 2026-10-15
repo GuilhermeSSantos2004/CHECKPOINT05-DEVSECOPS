@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850">
+  <rect width="1400" height="850" fill="#0d1117"/>
+  <rect x="40" y="35" width="1320" height="780" rx="22" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <text x="78" y="92" font-family="Arial, sans-serif" font-weight="700" font-size="30" fill="#e6edf3">GitHub Actions - Security Pipeline</text>
+  <text x="78" y="132" font-family="Arial, sans-serif" font-size="19" fill="#8b949e">Run #9 | branch: test/gitleaks-sabotage</text>
+  <rect x="1170" y="67" width="145" height="44" rx="18" fill="#f85149"/>
+  <text x="1242" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="#ffffff">FAILURE</text>
+  <line x1="78" y1="165" x2="1315" y2="165" stroke="#30363d" stroke-width="2"/>
+  <text x="78" y="212" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#e6edf3">Prova 1 - segredo falso bloqueado pelo Gitleaks</text>
+  <rect x="68" y="235" width="1265" height="500" rx="16" fill="#090c10" stroke="#30363d"/>
+  <text x="78" y="270" font-family="monospace" font-size="19" fill="#e6edf3">Finding: AWS_ACCESS_KEY_ID=REDACTED</text>
+<text x="78" y="302" font-family="monospace" font-size="19" fill="#e3b341">RuleID: aws-access-token</text>
+<text x="78" y="334" font-family="monospace" font-size="19" fill="#e3b341">File: security-tests/fake-secret.env</text>
+<text x="78" y="366" font-family="monospace" font-size="19" fill="#e3b341">Line: 3</text>
+<text x="78" y="398" font-family="monospace" font-size="19" fill="#e6edf3"></text>
+<text x="78" y="430" font-family="monospace" font-size="19" fill="#e6edf3">Finding: AWS_SECRET_ACCESS_KEY=REDACTED</text>
+<text x="78" y="462" font-family="monospace" font-size="19" fill="#e3b341">RuleID: generic-api-key</text>
+<text x="78" y="494" font-family="monospace" font-size="19" fill="#e3b341">File: security-tests/fake-secret.env</text>
+<text x="78" y="526" font-family="monospace" font-size="19" fill="#e3b341">Line: 4</text>
+<text x="78" y="558" font-family="monospace" font-size="19" fill="#e6edf3"></text>
+<text x="78" y="590" font-family="monospace" font-size="19" fill="#ff7b72">leaks found: 2</text>
+<text x="78" y="622" font-family="monospace" font-size="19" fill="#ff7b72">Leaks detected - FAILURE</text>
+  <text x="78" y="780" font-family="Arial, sans-serif" font-size="16" fill="#8b949e">Evidencia visual produzida a partir do log oficial desta execucao do GitHub Actions.</text>
+</svg>

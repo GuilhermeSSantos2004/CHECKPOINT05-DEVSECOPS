@@ -8,51 +8,78 @@ O pipeline foi criado para impedir três classes de risco antes da entrega:
 2. padrões de código vulnerável;
 3. imagem de container com vulnerabilidade crítica.
 
-O workflow fica em `.github/workflows/security.yml` e executa Gitleaks, Semgrep e Trivy.
+O workflow está em `.github/workflows/security.yml` e executa **Gitleaks, Semgrep e Trivy**.
 
-## Barreira 1 - Gitleaks
+## 1. Pipeline limpo
 
-O Gitleaks inspeciona o conteúdo versionado em busca de credenciais e tokens. A prova é feita em uma branch exclusiva de sabotagem, usando apenas um segredo falso.
+**Branch:** `main`  
+**Run:** [#6](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662611345)  
+**Resultado:** SUCCESS
 
-**Branch:** `test/gitleaks-sabotage`
+Os três jobs terminaram com sucesso. No Trivy, a imagem baseada em Alpine 3.24.2 apresentou **0 vulnerabilidades** dentro da política configurada.
 
-**Resultado esperado:** job `Gitleaks - Secret Scanning` com falha e identificação do segredo de teste.
+![Main limpa](evidencias/01_main_sucesso.svg)
 
-## Barreira 2 - Semgrep
+## 2. Prova 1 - Gitleaks
 
-O Semgrep executa análise estática com uma regra local que bloqueia `eval(...)` em Python.
+**Branch:** `test/gitleaks-sabotage`  
+**Run:** [#9](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662683841)  
+**Resultado:** FAILURE
 
-**Branch:** `test/semgrep-sabotage`
+Foi versionado um arquivo de sabotagem contendo somente credenciais falsas. O Gitleaks apontou:
 
-**Resultado esperado:** job `Semgrep - SAST` com falha e finding `python-dangerous-eval`.
+- `aws-access-token` na linha 3;
+- `generic-api-key` na linha 4;
+- **2 leaks encontrados**.
 
-## Barreira 3 - Trivy
+O job terminou com falha, comprovando que o pipeline barra o vazamento antes da aprovação da alteração.
 
-O Trivy constrói a imagem definida pelo Dockerfile e realiza varredura de CVEs.
+![Gitleaks](evidencias/02_gitleaks_bloqueio.svg)
 
-**Política:** falhar quando existir vulnerabilidade `CRITICAL` corrigível na imagem.
+## 3. Prova 2 - Semgrep
 
-Na `main`, o objetivo é que o job passe. Isso demonstra que uma imagem que viola a política não pode avançar no pipeline.
+**Branch:** `test/semgrep-sabotage`  
+**Run:** [#8](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662624561)  
+**Resultado:** FAILURE
 
-## Evidências
+O arquivo `security-tests/vulnerable_eval.py` contém propositalmente:
 
-Os links e identificadores das execuções do GitHub Actions serão registrados abaixo após a execução dos testes.
+```python
+result = eval(user_input)
+```
 
-### Gitleaks
+A regra `python-dangerous-eval` gerou **1 finding bloqueante** e o processo terminou com `exit code 1`.
 
-- Execução: a preencher após o teste.
-- Evidência: a preencher após o teste.
+![Semgrep](evidencias/03_semgrep_bloqueio.svg)
 
-### Semgrep
+## 4. Barreira de imagem - Trivy
 
-- Execução: a preencher após o teste.
-- Evidência: a preencher após o teste.
+**Branch:** `test/trivy-sabotage`  
+**Run:** [#11](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662696322)  
+**Resultado:** FAILURE
 
-### Pipeline limpo
+A sabotagem usa deliberadamente uma imagem antiga apenas para a prova. O Trivy detectou Debian 9.8 fora de suporte e retornou:
 
-- Execução: a preencher após o teste.
-- Evidência: a preencher após o teste.
+- **Total: 27 (CRITICAL: 27)**;
+- exemplo: `CVE-2022-1664`, severidade `CRITICAL`;
+- processo encerrado com `exit code 1`.
 
-## Conclusão
+![Trivy](evidencias/04_trivy_bloqueio.svg)
 
-As três verificações funcionam como gates de segurança independentes. Um erro em qualquer uma delas faz a execução terminar com falha, impedindo que uma alteração insegura seja tratada como aprovada pelo pipeline.
+## 5. Como cada barreira protege a entrega
+
+**Gitleaks:** evita que chaves, tokens e credenciais sejam incorporados ao histórico do repositório.
+
+**Semgrep:** faz análise estática do código e interrompe a entrega quando encontra padrões classificados como inseguros pela política do projeto.
+
+**Trivy:** analisa a imagem realmente construída pelo Dockerfile e impede que uma imagem com CVE crítico corrigível avance no pipeline.
+
+## 6. Conclusão
+
+As três verificações funcionam como gates independentes. A `main` passa quando o projeto está dentro da política, enquanto as branches de sabotagem provam que cada tipo de problema é detectado e bloqueado automaticamente.
+
+As evidências visuais deste documento foram produzidas a partir dos trechos oficiais dos logs das execuções identificadas pelos Run IDs acima.
+
+## PDF
+
+[Baixar/abrir o PDF de evidências](CP05_RELATORIO_EVIDENCIAS.pdf)

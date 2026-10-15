@@ -4,11 +4,7 @@
 
 Checkpoint prático de **DevSecOps e Cloud Computing - FIAP / Engenharia de Software**.
 
-O objetivo é implementar um pipeline de segurança no GitHub Actions capaz de bloquear:
-
-- vazamento de segredos com **Gitleaks**;
-- padrões de código vulnerável com **Semgrep**;
-- imagens Docker com vulnerabilidades **CRITICAL** com **Trivy**.
+O projeto implementa um pipeline obrigatório capaz de barrar **segredos**, **código vulnerável** e **imagem Docker com CVE crítico**.
 
 ## Integrantes
 
@@ -20,46 +16,52 @@ O objetivo é implementar um pipeline de segurança no GitHub Actions capaz de b
 | Danilo | 99465 |
 | Laura | 98747 |
 
-## Estrutura
+## Pipeline
 
-```text
-.
-├── .github/workflows/security.yml
-├── docs/
-│   └── RELATORIO_EVIDENCIAS.md
-├── site/
-│   ├── index.html
-│   ├── styles.css
-│   └── app.js
-├── .dockerignore
-├── .gitignore
-├── .semgrep.yml
-├── Dockerfile
-└── README.md
-```
+O workflow [`.github/workflows/security.yml`](.github/workflows/security.yml) executa três jobs independentes em `push`, `pull_request` e execução manual:
 
-## Pipeline de segurança
+1. **Gitleaks - Secret Scanning**: detecta credenciais e tokens versionados.
+2. **Semgrep - SAST**: análise estática; a política local bloqueia `eval(...)` em Python.
+3. **Trivy - Container CVE Scan**: constrói a imagem e falha diante de CVEs `CRITICAL` corrigíveis.
 
-O workflow `.github/workflows/security.yml` executa três barreiras independentes em `push` e `pull_request`:
+## Resultado final
 
-1. **Gitleaks** - procura credenciais, tokens e outros segredos no repositório.
-2. **Semgrep** - executa análise estática e bloqueia uso de `eval(...)` no código Python.
-3. **Trivy** - constrói a imagem Docker e falha se encontrar CVEs de severidade `CRITICAL`.
+A execução limpa da `main` passou nos três jobs:
 
-## Testes de sabotagem
+- [Run #6 - main limpa](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662611345)
 
-As provas são feitas em branches separadas para não deixar vulnerabilidades na `main`:
+As sabotagens foram mantidas em branches separadas para preservar a `main` segura:
 
-- `test/gitleaks-sabotage`: contém um segredo propositalmente falso apenas para validar o bloqueio do Gitleaks.
-- `test/semgrep-sabotage`: contém um arquivo Python com `eval(...)` apenas para validar o bloqueio do Semgrep.
+- [Run #9 - Gitleaks bloqueando segredo falso](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662683841)
+- [Run #8 - Semgrep bloqueando `eval()`](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662624561)
+- [Run #11 - Trivy bloqueando imagem com 27 CVEs CRITICAL](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662696322)
 
-Os resultados, links das execuções e explicações ficam em [docs/RELATORIO_EVIDENCIAS.md](docs/RELATORIO_EVIDENCIAS.md).
+> Os segredos usados na sabotagem são propositalmente falsos e não correspondem a nenhuma conta real.
 
-> Nenhuma credencial real é usada nos testes.
+## Evidências
 
-## Executar o site localmente
+### Pipeline limpo
 
-### Docker
+![Pipeline limpo](docs/evidencias/01_main_sucesso.svg)
+
+### Gitleaks
+
+![Gitleaks bloqueando segredo falso](docs/evidencias/02_gitleaks_bloqueio.svg)
+
+### Semgrep
+
+![Semgrep bloqueando eval](docs/evidencias/03_semgrep_bloqueio.svg)
+
+### Trivy
+
+![Trivy bloqueando imagem vulnerável](docs/evidencias/04_trivy_bloqueio.svg)
+
+## Relatório de entrega
+
+- [Relatório detalhado em Markdown](docs/RELATORIO_EVIDENCIAS.md)
+- [PDF de evidências](docs/CP05_RELATORIO_EVIDENCIAS.pdf)
+
+## Executar o site
 
 ```bash
 docker build -t cp05-devsecops .
@@ -68,26 +70,39 @@ docker run --rm -p 8080:8080 cp05-devsecops
 
 Acesse `http://localhost:8080`.
 
-### Sem Docker
+## Estrutura
 
-Abra `site/index.html` no navegador.
-
-## Validar o Semgrep localmente
-
-Com Docker:
-
-```bash
-docker run --rm -v "${PWD}:/src" semgrep/semgrep semgrep scan --config /src/.semgrep.yml --error /src
+```text
+.
+├── .github/workflows/security.yml
+├── docs/
+│   ├── CP05_RELATORIO_EVIDENCIAS.pdf
+│   ├── RELATORIO_EVIDENCIAS.md
+│   └── evidencias/
+│       ├── 01_main_sucesso.svg
+│       ├── 02_gitleaks_bloqueio.svg
+│       ├── 03_semgrep_bloqueio.svg
+│       └── 04_trivy_bloqueio.svg
+├── site/
+│   ├── index.html
+│   ├── styles.css
+│   └── app.js
+├── .semgrep.yml
+├── Dockerfile
+└── README.md
 ```
 
-## Critérios atendidos
+## Checklist CP05
 
 - [x] Repositório com site.
-- [x] Dockerfile.
-- [x] Workflow de segurança.
+- [x] Dockerfile funcional.
+- [x] Workflow `security.yml`.
 - [x] Job Gitleaks.
 - [x] Job Semgrep.
-- [x] Job Trivy para CVE crítico.
-- [x] Teste de sabotagem de segredo falso.
-- [x] Teste de sabotagem com `eval`.
-- [x] Documentação das barreiras e evidências.
+- [x] Job Trivy para imagem com CVE crítico.
+- [x] Prova de segredo falso barrado.
+- [x] Prova de `eval()` barrado.
+- [x] Prova adicional de imagem vulnerável barrada.
+- [x] Execução limpa da `main`.
+- [x] Evidências visuais.
+- [x] PDF com explicação de cada barreira.
