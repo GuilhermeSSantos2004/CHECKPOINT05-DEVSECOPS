@@ -46,7 +46,7 @@ jobs:
         run: docker build -t cp05-devsecops:${{ github.sha }} .
 
       - name: Scan image for critical vulnerabilities
-        uses: aquasecurity/trivy-action@0.36.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: cp05-devsecops:${{ github.sha }}
           format: table
