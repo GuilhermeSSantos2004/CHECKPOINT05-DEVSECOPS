@@ -1,0 +1,13 @@
+rules:
+  - id: python-dangerous-eval
+    languages:
+      - python
+    severity: ERROR
+    message: "Uso de eval() detectado. Esta função pode executar código não confiável."
+    pattern: eval(...)
+    metadata:
+      category: security
+      technology:
+        - python
+      cwe:
+        - "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code"
