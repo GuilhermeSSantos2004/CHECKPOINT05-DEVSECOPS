@@ -12,92 +12,58 @@
 
 ## Objetivo
 
-O pipeline foi criado para impedir três classes de risco antes da entrega:
+O pipeline foi configurado para bloquear três situações durante a integração do projeto:
 
-1. vazamento de segredos;
-2. padrões de código vulnerável;
-3. imagem de container com vulnerabilidade crítica.
+1. segredos versionados no repositório;
+2. código vulnerável;
+3. imagem Docker com vulnerabilidade crítica.
 
-O workflow está em `.github/workflows/security.yml` e executa **Gitleaks, Semgrep e Trivy**.
+O workflow está em `.github/workflows/security.yml` e utiliza Gitleaks, Semgrep e Trivy.
 
-## 1. Pipeline limpo
+## Pipeline principal
 
 **Branch:** `main`  
 **Run:** [#13](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38664072536)  
 **Resultado:** SUCCESS
 
-Os três jobs terminaram com sucesso. No Trivy, a imagem baseada em Alpine 3.24.2 apresentou **0 vulnerabilidades** dentro da política configurada.
+Os três jobs foram concluídos com sucesso na branch principal.
 
-![Main limpa](evidencias/01_main_sucesso.svg)
-
-[Log usado na evidência](logs/01_main_run13.txt)
-
-## 2. Prova 1 - Gitleaks
+## Teste 1 - Gitleaks
 
 **Branch:** `test/gitleaks-sabotage`  
 **Run:** [#9](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662683841)  
 **Resultado:** FAILURE
 
-Foi versionado um arquivo de sabotagem contendo somente credenciais falsas. O Gitleaks apontou:
+Para testar a primeira barreira foi adicionado um arquivo com credenciais falsas. O Gitleaks encontrou:
 
 - `aws-access-token` na linha 3;
 - `generic-api-key` na linha 4;
-- **2 leaks encontrados**.
+- 2 leaks no total.
 
-O job terminou com falha, comprovando que o pipeline barra o vazamento antes da aprovação da alteração.
+O teste mostra que o job é interrompido quando um segredo é versionado.
 
-![Gitleaks](evidencias/02_gitleaks_bloqueio.svg)
-
-[Log usado na evidência](logs/02_gitleaks_run9.txt)
-
-## 3. Prova 2 - Semgrep
+## Teste 2 - Semgrep
 
 **Branch:** `test/semgrep-sabotage`  
 **Run:** [#8](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662624561)  
 **Resultado:** FAILURE
 
-O arquivo `security-tests/vulnerable_eval.py` contém propositalmente:
+O arquivo de teste contém:
 
 ```python
 result = eval(user_input)
 ```
 
-A regra `python-dangerous-eval` gerou **1 finding bloqueante** e o processo terminou com `exit code 1`.
+A regra `python-dangerous-eval` identificou o trecho como bloqueante. O Semgrep registrou 1 finding e encerrou o job com `exit code 1`.
 
-![Semgrep](evidencias/03_semgrep_bloqueio.svg)
-
-[Log usado na evidência](logs/03_semgrep_run8.txt)
-
-## 4. Barreira de imagem - Trivy
+## Teste 3 - Trivy
 
 **Branch:** `test/trivy-sabotage`  
 **Run:** [#11](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662696322)  
 **Resultado:** FAILURE
 
-A sabotagem usa deliberadamente uma imagem antiga apenas para a prova. O Trivy detectou Debian 9.8 fora de suporte e retornou:
+Para validar a análise da imagem foi usada uma versão antiga do Nginx somente na branch de teste. O Trivy detectou Debian 9.8 e apresentou **27 vulnerabilidades CRITICAL**. Entre os resultados aparece a `CVE-2022-1664` no pacote `dpkg`.
 
-- **Total: 27 (CRITICAL: 27)**;
-- exemplo: `CVE-2022-1664`, severidade `CRITICAL`;
-- processo encerrado com `exit code 1`.
+## Conclusão
 
-![Trivy](evidencias/04_trivy_bloqueio.svg)
-
-[Log usado na evidência](logs/04_trivy_run11.txt)
-
-## 5. Como cada barreira protege a entrega
-
-**Gitleaks:** evita que chaves, tokens e credenciais sejam incorporados ao histórico do repositório.
-
-**Semgrep:** faz análise estática do código e interrompe a entrega quando encontra padrões classificados como inseguros pela política do projeto.
-
-**Trivy:** analisa a imagem realmente construída pelo Dockerfile e impede que uma imagem com CVE crítico corrigível avance no pipeline.
-
-## 6. Conclusão
-
-As três verificações funcionam como gates independentes. A `main` passa quando o projeto está dentro da política, enquanto as branches de sabotagem provam que cada tipo de problema é detectado e bloqueado automaticamente.
-
-As evidências visuais deste documento foram produzidas com trechos reais dos logs oficiais retornados pelo GitHub Actions. Cada evidência informa o Run ID e mantém um arquivo `.txt` em `docs/logs/` com os mesmos trechos para conferência. Elas não são apresentadas como captura literal da interface do navegador.
-
-## PDF
-
-[Baixar/abrir o PDF de evidências](CP05_RELATORIO_EVIDENCIAS.pdf)
+Os testes foram separados por branch para facilitar a identificação de cada falha. O Gitleaks bloqueou o segredo falso, o Semgrep apontou o uso de `eval(...)` e o Trivy bloqueou a imagem vulnerável. Depois dos testes, a branch `main` permaneceu com os três jobs aprovados.
