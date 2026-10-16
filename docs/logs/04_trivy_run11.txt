@@ -1,0 +1,9 @@
+RUN #11 - test/trivy-sabotage - FAILURE
+https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662696322
+
+2026-10-15T00:54:45.0836022Z Complete job name: Trivy - Container CVE Scan
+2026-10-15T00:54:51.0413281Z severity: CRITICAL
+2026-10-15T00:55:20.0823175Z INFO Detected OS family="debian" version="9.8"
+2026-10-15T00:55:20.1072452Z Total: 27 (CRITICAL: 27)
+2026-10-15T00:55:20.1079273Z dpkg | CVE-2022-1664 | CRITICAL | fixed | 1.18.25 | 1.18.26
+2026-10-15T00:55:20.1174884Z Process completed with exit code 1.

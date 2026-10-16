@@ -1,0 +1,11 @@
+RUN #8 - test/semgrep-sabotage - FAILURE
+https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662624561
+
+2026-10-15T00:53:56.9782201Z Complete job name: Semgrep - SAST
+2026-10-15T00:54:10.5104917Z 1 Code Finding
+2026-10-15T00:54:10.5106742Z python-dangerous-eval
+2026-10-15T00:54:10.5107238Z Blocking
+2026-10-15T00:54:10.5108703Z 4 | result = eval(user_input)
+2026-10-15T00:54:10.5180316Z Scan completed successfully.
+2026-10-15T00:54:10.5180683Z Findings: 1 (1 blocking)
+2026-10-15T00:54:10.7420452Z Process completed with exit code 1.

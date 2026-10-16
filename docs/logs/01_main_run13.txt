@@ -1,0 +1,13 @@
+RUN #13 - main - SUCCESS
+https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38664072536
+
+2026-10-15T01:09:14.8908638Z Complete job name: Gitleaks - Secret Scanning
+2026-10-15T01:09:17.1903524Z 1:09AM INF no leaks found
+
+2026-10-15T01:09:14.8285449Z Complete job name: Semgrep - SAST
+2026-10-15T01:09:37.7218463Z Scan completed successfully.
+2026-10-15T01:09:37.7218643Z Findings: 0 (0 blocking)
+
+2026-10-15T01:09:16.4491324Z Complete job name: Trivy - Container CVE Scan
+2026-10-15T01:09:38.8194836Z INFO Detected OS family="alpine" version="3.24.2"
+2026-10-15T01:09:38.8320464Z 0: Clean (no security findings detected)

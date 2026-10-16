@@ -18,111 +18,112 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
-<< /Length 1307 >>
+<< /Length 1208 >>
 stream
-BT /F2 22 Tf 120 790 Td (CHECKPOINT 05 - DEVSECOPS) Tj ET
-BT /F1 12 Tf 145 765 Td (Pipeline DevSecOps Completo - Relatorio de Evidencias) Tj ET
-50 748 m 545 748 l S
-BT /F2 14 Tf 50 715 Td (Integrantes) Tj ET
-BT /F1 9.5 Tf 65 690 Td (Guilherme Silva dos Santos - RM 551168) Tj ET
-BT /F1 9.5 Tf 65 671 Td (Enricco Rossi de Souza Carvalho Miranda - RM 551717) Tj ET
-BT /F1 9.5 Tf 65 652 Td (Gabriel Marquez Trevisan - RM 99227) Tj ET
-BT /F1 9.5 Tf 65 633 Td (Danilo Urze Aldred - RM 99465) Tj ET
-BT /F1 9.5 Tf 65 614 Td (Laura Claro Mathias - RM 98747) Tj ET
-BT /F2 14 Tf 50 570 Td (Objetivo) Tj ET
-BT /F1 10 Tf 50 547 Td (Bloquear segredos, codigo vulneravel e imagem Docker com CVE CRITICAL.) Tj ET
-BT /F1 10 Tf 50 529 Td (Jobs: Gitleaks \(secret scanning\), Semgrep \(SAST\) e Trivy \(container scan\).) Tj ET
-BT /F2 14 Tf 50 490 Td (Execucoes) Tj ET
-BT /F1 9 Tf 65 465 Td (Run #12 main final            SUCCESS  - 3 jobs aprovados) Tj ET
-BT /F1 9 Tf 65 445 Td (Run #9  gitleaks-sabotage     FAILURE  - 2 leaks encontrados) Tj ET
-BT /F1 9 Tf 65 425 Td (Run #8  semgrep-sabotage      FAILURE  - 1 finding bloqueante) Tj ET
-BT /F1 9 Tf 65 405 Td (Run #11 trivy-sabotage        FAILURE  - 27 CVEs CRITICAL) Tj ET
-BT /F2 12 Tf 50 355 Td (Links completos estao no README e em docs/RELATORIO_EVIDENCIAS.md) Tj ET
+q 0.05 0.07 0.09 rg 0 0 595 842 re f Q
+BT /F2 22 Tf 48 770 Td (CHECKPOINT 05 - DEVSECOPS) Tj ET
+BT /F1 11 Tf 48 744 Td (Relatorio de evidencias reais extraidas do GitHub Actions) Tj ET
+BT /F2 13 Tf 48 700 Td (Integrantes) Tj ET
+BT /F1 9.5 Tf 62 674 Td (Guilherme Silva dos Santos - RM 551168) Tj ET
+BT /F1 9.5 Tf 62 652 Td (Enricco Rossi de Souza Carvalho Miranda - RM 551717) Tj ET
+BT /F1 9.5 Tf 62 630 Td (Gabriel Marquez Trevisan - RM 99227) Tj ET
+BT /F1 9.5 Tf 62 608 Td (Danilo Urze Aldred - RM 99465) Tj ET
+BT /F1 9.5 Tf 62 586 Td (Laura Claro Mathias - RM 98747) Tj ET
+BT /F2 12 Tf 48 540 Td (Execucoes usadas como evidencia) Tj ET
+BT /F1 9.5 Tf 62 515 Td (Run #13 main - SUCCESS: Gitleaks, Semgrep e Trivy aprovados.) Tj ET
+BT /F1 9.5 Tf 62 493 Td (Run #9 Gitleaks - FAILURE: 2 leaks de teste detectados.) Tj ET
+BT /F1 9.5 Tf 62 471 Td (Run #8 Semgrep - FAILURE: 1 finding bloqueante em eval\(user_input\).) Tj ET
+BT /F1 9.5 Tf 62 449 Td (Run #11 Trivy - FAILURE: 27 vulnerabilidades CRITICAL.) Tj ET
+BT /F1 9 Tf 48 385 Td (As paginas seguintes reproduzem trechos reais dos logs oficiais.) Tj ET
+BT /F1 9 Tf 48 365 Td (Nao sao apresentadas como screenshots literais da interface do navegador.) Tj ET
 endstream
 endobj
 8 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
 endobj
 9 0 obj
-<< /Length 617 >>
+<< /Length 1208 >>
 stream
-BT /F2 18 Tf 50 790 Td (Pipeline limpo - main - Run #12) Tj ET
-BT /F1 10 Tf 50 766 Td (Resultado: SUCCESS. As tres barreiras foram aprovadas.) Tj ET
-q 0.04 0.06 0.08 rg 48 115 500 470 re f Q
-0.20 0.24 0.28 RG 48 115 500 470 re S
-BT /F3 9 Tf 62 545 Td (Gitleaks - Secret Scanning ........ SUCCESS) Tj ET
-BT /F3 9 Tf 62 527 Td (Semgrep - SAST .................... SUCCESS) Tj ET
-BT /F3 9 Tf 62 509 Td (Trivy - Container CVE Scan ........ SUCCESS) Tj ET
-BT /F3 9 Tf 62 491 Td () Tj ET
-BT /F3 9 Tf 62 473 Td (Resultado final da main: pipeline aprovado) Tj ET
-BT /F3 9 Tf 62 455 Td (Nenhum gate de seguranca falhou) Tj ET
+q 0.05 0.07 0.09 rg 0 0 595 842 re f Q
+BT /F2 18 Tf 42 790 Td (Pipeline limpo - Run #13) Tj ET
+BT /F1 9 Tf 42 768 Td (https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38664072536) Tj ET
+q 0.085 0.105 0.13 rg 42 150 511 570 re f Q
+BT /F2 12 Tf 58 695 Td (GitHub Actions - SUCCESS) Tj ET
+BT /F3 7.2 Tf 58 665 Td (2026-10-15T01:09:14.8908638Z Complete job name: Gitleaks - Secret Scanning) Tj ET
+BT /F3 7.2 Tf 58 643 Td (2026-10-15T01:09:17.1903524Z 1:09AM INF no leaks found) Tj ET
+BT /F3 7.2 Tf 58 610 Td (2026-10-15T01:09:14.8285449Z Complete job name: Semgrep - SAST) Tj ET
+BT /F3 7.2 Tf 58 588 Td (2026-10-15T01:09:37.7218463Z Scan completed successfully.) Tj ET
+BT /F3 7.2 Tf 58 566 Td (2026-10-15T01:09:37.7218643Z Findings: 0 \(0 blocking\)) Tj ET
+BT /F3 7.2 Tf 58 533 Td (2026-10-15T01:09:16.4491324Z Complete job name: Trivy - Container CVE Scan) Tj ET
+BT /F3 7.2 Tf 58 511 Td (2026-10-15T01:09:38.8194836Z INFO Detected OS family="alpine" version="3.24.2") Tj ET
+BT /F3 7.2 Tf 58 489 Td (2026-10-15T01:09:38.8320464Z 0: Clean \(no security findings detected\)) Tj ET
+BT /F1 8 Tf 58 172 Td (Fonte: logs oficiais do GitHub Actions. Run ID e links completos no README.) Tj ET
 endstream
 endobj
 10 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 11 0 R >>
 endobj
 11 0 obj
-<< /Length 849 >>
+<< /Length 1320 >>
 stream
-BT /F2 18 Tf 50 790 Td (Prova 1 - Gitleaks - Run #9) Tj ET
-BT /F1 10 Tf 50 766 Td (Segredo propositalmente falso detectado e pipeline bloqueado.) Tj ET
-q 0.04 0.06 0.08 rg 48 115 500 470 re f Q
-0.20 0.24 0.28 RG 48 115 500 470 re S
-BT /F3 9 Tf 62 545 Td (Finding: AWS_ACCESS_KEY_ID=REDACTED) Tj ET
-BT /F3 9 Tf 62 527 Td (RuleID: aws-access-token) Tj ET
-BT /F3 9 Tf 62 509 Td (File: security-tests/fake-secret.env) Tj ET
-BT /F3 9 Tf 62 491 Td (Line: 3) Tj ET
-BT /F3 9 Tf 62 473 Td () Tj ET
-BT /F3 9 Tf 62 455 Td (Finding: AWS_SECRET_ACCESS_KEY=REDACTED) Tj ET
-BT /F3 9 Tf 62 437 Td (RuleID: generic-api-key) Tj ET
-BT /F3 9 Tf 62 419 Td (File: security-tests/fake-secret.env) Tj ET
-BT /F3 9 Tf 62 401 Td (Line: 4) Tj ET
-BT /F3 9 Tf 62 383 Td () Tj ET
-BT /F3 9 Tf 62 365 Td (leaks found: 2) Tj ET
-BT /F3 9 Tf 62 347 Td (Leaks detected - FAILURE) Tj ET
+q 0.05 0.07 0.09 rg 0 0 595 842 re f Q
+BT /F2 18 Tf 42 790 Td (Prova 1 - Gitleaks - Run #9) Tj ET
+BT /F1 9 Tf 42 768 Td (https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662683841) Tj ET
+q 0.085 0.105 0.13 rg 42 150 511 570 re f Q
+BT /F2 12 Tf 58 695 Td (GitHub Actions - FAILURE) Tj ET
+BT /F3 7.2 Tf 58 665 Td (2026-10-15T00:54:35.4594565Z Complete job name: Gitleaks - Secret Scanning) Tj ET
+BT /F3 7.2 Tf 58 643 Td (2026-10-15T00:54:37.1602957Z Finding: AWS_ACCESS_KEY_ID=REDACTED) Tj ET
+BT /F3 7.2 Tf 58 621 Td (2026-10-15T00:54:37.1604938Z RuleID: aws-access-token) Tj ET
+BT /F3 7.2 Tf 58 599 Td (2026-10-15T00:54:37.1606301Z File: security-tests/fake-secret.env) Tj ET
+BT /F3 7.2 Tf 58 577 Td (2026-10-15T00:54:37.1606975Z Line: 3) Tj ET
+BT /F3 7.2 Tf 58 555 Td (2026-10-15T00:54:37.1614694Z Finding: AWS_SECRET_ACCESS_KEY=REDACTED) Tj ET
+BT /F3 7.2 Tf 58 533 Td (2026-10-15T00:54:37.1615799Z RuleID: generic-api-key) Tj ET
+BT /F3 7.2 Tf 58 511 Td (2026-10-15T00:54:37.1616435Z File: security-tests/fake-secret.env) Tj ET
+BT /F3 7.2 Tf 58 489 Td (2026-10-15T00:54:37.1616776Z Line: 4) Tj ET
+BT /F3 7.2 Tf 58 467 Td (2026-10-15T00:54:37.1623264Z 12:54AM WRN leaks found: 2) Tj ET
+BT /F1 8 Tf 58 172 Td (Fonte: logs oficiais do GitHub Actions. Run ID e links completos no README.) Tj ET
 endstream
 endobj
 12 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 13 0 R >>
 endobj
 13 0 obj
-<< /Length 705 >>
+<< /Length 1113 >>
 stream
-BT /F2 18 Tf 50 790 Td (Prova 2 - Semgrep - Run #8) Tj ET
-BT /F1 10 Tf 50 766 Td (Codigo vulneravel com eval\(\) detectado e pipeline bloqueado.) Tj ET
-q 0.04 0.06 0.08 rg 48 115 500 470 re f Q
-0.20 0.24 0.28 RG 48 115 500 470 re S
-BT /F3 9 Tf 62 545 Td (1 Code Finding) Tj ET
-BT /F3 9 Tf 62 527 Td (security-tests/vulnerable_eval.py) Tj ET
-BT /F3 9 Tf 62 509 Td (python-dangerous-eval) Tj ET
-BT /F3 9 Tf 62 491 Td (Blocking) Tj ET
-BT /F3 9 Tf 62 473 Td (Uso de eval\(\) detectado.) Tj ET
-BT /F3 9 Tf 62 455 Td (4 | result = eval\(user_input\)) Tj ET
-BT /F3 9 Tf 62 437 Td () Tj ET
-BT /F3 9 Tf 62 419 Td (Findings: 1 \(1 blocking\)) Tj ET
-BT /F3 9 Tf 62 401 Td (Process completed with exit code 1.) Tj ET
+q 0.05 0.07 0.09 rg 0 0 595 842 re f Q
+BT /F2 18 Tf 42 790 Td (Prova 2 - Semgrep - Run #8) Tj ET
+BT /F1 9 Tf 42 768 Td (https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662624561) Tj ET
+q 0.085 0.105 0.13 rg 42 150 511 570 re f Q
+BT /F2 12 Tf 58 695 Td (GitHub Actions - FAILURE) Tj ET
+BT /F3 7.2 Tf 58 665 Td (2026-10-15T00:53:56.9782201Z Complete job name: Semgrep - SAST) Tj ET
+BT /F3 7.2 Tf 58 643 Td (2026-10-15T00:54:10.5104917Z 1 Code Finding) Tj ET
+BT /F3 7.2 Tf 58 621 Td (2026-10-15T00:54:10.5106742Z python-dangerous-eval) Tj ET
+BT /F3 7.2 Tf 58 599 Td (2026-10-15T00:54:10.5107238Z Blocking) Tj ET
+BT /F3 7.2 Tf 58 577 Td (2026-10-15T00:54:10.5108703Z 4 | result = eval\(user_input\)) Tj ET
+BT /F3 7.2 Tf 58 555 Td (2026-10-15T00:54:10.5180316Z Scan completed successfully.) Tj ET
+BT /F3 7.2 Tf 58 533 Td (2026-10-15T00:54:10.5180683Z Findings: 1 \(1 blocking\)) Tj ET
+BT /F3 7.2 Tf 58 511 Td (2026-10-15T00:54:10.7420452Z Process completed with exit code 1.) Tj ET
+BT /F1 8 Tf 58 172 Td (Fonte: logs oficiais do GitHub Actions. Run ID e links completos no README.) Tj ET
 endstream
 endobj
 14 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 15 0 R >>
 endobj
 15 0 obj
-<< /Length 850 >>
+<< /Length 1029 >>
 stream
-BT /F2 18 Tf 50 790 Td (Prova adicional - Trivy - Run #11) Tj ET
-BT /F1 10 Tf 50 766 Td (Imagem antiga usada somente para provar o bloqueio de CVE CRITICAL.) Tj ET
-q 0.04 0.06 0.08 rg 48 115 500 470 re f Q
-0.20 0.24 0.28 RG 48 115 500 470 re S
-BT /F3 9 Tf 62 545 Td (Detected OS: family=debian version=9.8) Tj ET
-BT /F3 9 Tf 62 527 Td (OS version is no longer supported) Tj ET
-BT /F3 9 Tf 62 509 Td () Tj ET
-BT /F3 9 Tf 62 491 Td (Total: 27 \(CRITICAL: 27\)) Tj ET
-BT /F3 9 Tf 62 473 Td (dpkg | CVE-2022-1664 | CRITICAL | fixed) Tj ET
-BT /F3 9 Tf 62 455 Td (Installed: 1.18.25 | Fixed: 1.18.26) Tj ET
-BT /F3 9 Tf 62 437 Td () Tj ET
-BT /F3 9 Tf 62 419 Td (Process completed with exit code 1.) Tj ET
-BT /F2 14 Tf 50 78 Td (Conclusao) Tj ET
-BT /F1 9 Tf 50 58 Td (A main passa limpa e as sabotagens comprovam o bloqueio automatico dos tres gates.) Tj ET
+q 0.05 0.07 0.09 rg 0 0 595 842 re f Q
+BT /F2 18 Tf 42 790 Td (Prova adicional - Trivy - Run #11) Tj ET
+BT /F1 9 Tf 42 768 Td (https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662696322) Tj ET
+q 0.085 0.105 0.13 rg 42 150 511 570 re f Q
+BT /F2 12 Tf 58 695 Td (GitHub Actions - FAILURE) Tj ET
+BT /F3 7.2 Tf 58 665 Td (2026-10-15T00:54:45.0836022Z Complete job name: Trivy - Container CVE Scan) Tj ET
+BT /F3 7.2 Tf 58 643 Td (2026-10-15T00:54:51.0413281Z severity: CRITICAL) Tj ET
+BT /F3 7.2 Tf 58 621 Td (2026-10-15T00:55:20.0823175Z INFO Detected OS family="debian" version="9.8") Tj ET
+BT /F3 7.2 Tf 58 599 Td (2026-10-15T00:55:20.1072452Z Total: 27 \(CRITICAL: 27\)) Tj ET
+BT /F3 7.2 Tf 58 577 Td (2026-10-15T00:55:20.1079273Z dpkg | CVE-2022-1664 | CRITICAL | fixed | 1.18.25 | 1.18.26) Tj ET
+BT /F3 7.2 Tf 58 555 Td (2026-10-15T00:55:20.1174884Z Process completed with exit code 1.) Tj ET
+BT /F1 8 Tf 58 172 Td (Fonte: logs oficiais do GitHub Actions. Run ID e links completos no README.) Tj ET
 endstream
 endobj
 xref
@@ -135,16 +136,16 @@ xref
 0000000287 00000 n 
 0000000355 00000 n 
 0000000501 00000 n 
-0000001859 00000 n 
-0000002005 00000 n 
-0000002672 00000 n 
-0000002820 00000 n 
-0000003720 00000 n 
-0000003868 00000 n 
-0000004624 00000 n 
-0000004772 00000 n 
+0000001760 00000 n 
+0000001906 00000 n 
+0000003165 00000 n 
+0000003313 00000 n 
+0000004685 00000 n 
+0000004833 00000 n 
+0000005998 00000 n 
+0000006146 00000 n 
 trailer
 << /Size 16 /Root 1 0 R >>
 startxref
-5673
+7227
 %%EOF

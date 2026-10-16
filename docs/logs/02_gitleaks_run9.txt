@@ -1,0 +1,13 @@
+RUN #9 - test/gitleaks-sabotage - FAILURE
+https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38662683841
+
+2026-10-15T00:54:35.4594565Z Complete job name: Gitleaks - Secret Scanning
+2026-10-15T00:54:37.1602957Z Finding: AWS_ACCESS_KEY_ID=REDACTED
+2026-10-15T00:54:37.1604938Z RuleID: aws-access-token
+2026-10-15T00:54:37.1606301Z File: security-tests/fake-secret.env
+2026-10-15T00:54:37.1606975Z Line: 3
+2026-10-15T00:54:37.1614694Z Finding: AWS_SECRET_ACCESS_KEY=REDACTED
+2026-10-15T00:54:37.1615799Z RuleID: generic-api-key
+2026-10-15T00:54:37.1616435Z File: security-tests/fake-secret.env
+2026-10-15T00:54:37.1616776Z Line: 4
+2026-10-15T00:54:37.1623264Z 12:54AM WRN leaks found: 2

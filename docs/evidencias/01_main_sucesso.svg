@@ -1,19 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850">
-  <rect width="1400" height="850" fill="#0d1117"/>
-  <rect x="40" y="35" width="1320" height="780" rx="22" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-  <text x="78" y="92" font-family="Arial, sans-serif" font-weight="700" font-size="30" fill="#e6edf3">GitHub Actions - Security Pipeline</text>
-  <text x="78" y="132" font-family="Arial, sans-serif" font-size="19" fill="#8b949e">Run #6 | branch: main</text>
-  <rect x="1170" y="67" width="145" height="44" rx="18" fill="#3fb950"/>
-  <text x="1242" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="#ffffff">SUCCESS</text>
-  <line x1="78" y1="165" x2="1315" y2="165" stroke="#30363d" stroke-width="2"/>
-  <text x="78" y="212" font-family="Arial, sans-serif" font-weight="700" font-size="27" fill="#e6edf3">Execucao limpa - 3 barreiras aprovadas</text>
-  <rect x="68" y="235" width="1265" height="500" rx="16" fill="#090c10" stroke="#30363d"/>
-  <text x="78" y="270" font-family="monospace" font-size="19" fill="#56d364">Gitleaks - Secret Scanning ........ SUCCESS</text>
-<text x="78" y="302" font-family="monospace" font-size="19" fill="#56d364">Semgrep - SAST .................... SUCCESS</text>
-<text x="78" y="334" font-family="monospace" font-size="19" fill="#56d364">Trivy - Container CVE Scan ........ SUCCESS</text>
-<text x="78" y="366" font-family="monospace" font-size="19" fill="#e6edf3"></text>
-<text x="78" y="398" font-family="monospace" font-size="19" fill="#e6edf3">Target: cp05-devsecops:7b01df3a... (alpine 3.24.2)</text>
-<text x="78" y="430" font-family="monospace" font-size="19" fill="#56d364">Vulnerabilities: 0</text>
-<text x="78" y="462" font-family="monospace" font-size="19" fill="#56d364">Clean (no security findings detected)</text>
-  <text x="78" y="780" font-family="Arial, sans-serif" font-size="16" fill="#8b949e">Evidencia visual produzida a partir do log oficial desta execucao do GitHub Actions.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#0d1117"/>
+<rect x="35" y="30" width="1530" height="835" rx="20" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+<rect x="35" y="30" width="1530" height="78" rx="20" fill="#010409"/>
+<text x="70" y="80" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#f0f6fc">GitHub Actions - evidencia real extraida do log oficial</text>
+<rect x="1370" y="48" width="150" height="42" rx="14" fill="#238636"/>
+<text x="1445" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">SUCCESS</text>
+<text x="70" y="148" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#f0f6fc">Pipeline final aprovado</text>
+<text x="70" y="183" font-family="Arial, sans-serif" font-size="20" fill="#8b949e">Run #13 - main</text>
+<text x="70" y="216" font-family="Arial, sans-serif" font-size="18" fill="#58a6ff">https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38664072536</text>
+<line x1="70" y1="235" x2="1530" y2="235" stroke="#30363d" stroke-width="2"/>
+<text x="70" y="265" font-family="DejaVu Sans Mono, monospace" font-size="18" fill="#e6edf3">2026-10-15T01:09:14.8908638Z Complete job name: Gitleaks - Secret Scanning</text>
+<text x="70" y="296" font-family="DejaVu Sans Mono, monospace" font-size="18" fill="#ff7b72">2026-10-15T01:09:17.1903524Z 1:09AM INF no leaks found</text>
+
+<text x="70" y="345" font-family="DejaVu Sans Mono, monospace" font-size="18" fill="#e6edf3">2026-10-15T01:09:14.8285449Z Complete job name: Semgrep - SAST</text>
+<text x="70" y="376" font-family="DejaVu Sans Mono, monospace" font-size="18" fill="#56d364">2026-10-15T01:09:37.7218463Z Scan completed successfully.</text>
+<text x="70" y="407" font-family="DejaVu Sans Mono, monospace" font-size="18" fill="#ff7b72">2026-10-15T01:09:37.7218643Z Findings: 0 (0 blocking)</text>
+
+<text x="70" y="456" font-family="DejaVu Sans Mono, monospace" font-size="18" fill="#e6edf3">2026-10-15T01:09:16.4491324Z Complete job name: Trivy - Container CVE Scan</text>
+<text x="70" y="487" font-family="DejaVu Sans Mono, monospace" font-size="18" fill="#e6edf3">2026-10-15T01:09:38.8194836Z INFO Detected OS family=&quot;alpine&quot; version=&quot;3.24.2&quot;</text>
+<text x="70" y="518" font-family="DejaVu Sans Mono, monospace" font-size="18" fill="#56d364">2026-10-15T01:09:38.8320464Z 0: Clean (no security findings detected)</text>
+<text x="70" y="830" font-family="Arial, sans-serif" font-size="17" fill="#8b949e">Fonte: trechos reais retornados pelos logs oficiais do GitHub Actions. Nenhum resultado foi inventado.</text>
 </svg>

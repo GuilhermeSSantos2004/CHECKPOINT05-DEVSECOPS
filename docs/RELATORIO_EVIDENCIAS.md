@@ -23,12 +23,14 @@ O workflow está em `.github/workflows/security.yml` e executa **Gitleaks, Semgr
 ## 1. Pipeline limpo
 
 **Branch:** `main`  
-**Run:** [#12](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38663076725)  
+**Run:** [#13](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38664072536)  
 **Resultado:** SUCCESS
 
 Os três jobs terminaram com sucesso. No Trivy, a imagem baseada em Alpine 3.24.2 apresentou **0 vulnerabilidades** dentro da política configurada.
 
 ![Main limpa](evidencias/01_main_sucesso.svg)
+
+[Log usado na evidência](logs/01_main_run13.txt)
 
 ## 2. Prova 1 - Gitleaks
 
@@ -46,6 +48,8 @@ O job terminou com falha, comprovando que o pipeline barra o vazamento antes da 
 
 ![Gitleaks](evidencias/02_gitleaks_bloqueio.svg)
 
+[Log usado na evidência](logs/02_gitleaks_run9.txt)
+
 ## 3. Prova 2 - Semgrep
 
 **Branch:** `test/semgrep-sabotage`  
@@ -62,6 +66,8 @@ A regra `python-dangerous-eval` gerou **1 finding bloqueante** e o processo term
 
 ![Semgrep](evidencias/03_semgrep_bloqueio.svg)
 
+[Log usado na evidência](logs/03_semgrep_run8.txt)
+
 ## 4. Barreira de imagem - Trivy
 
 **Branch:** `test/trivy-sabotage`  
@@ -76,6 +82,8 @@ A sabotagem usa deliberadamente uma imagem antiga apenas para a prova. O Trivy d
 
 ![Trivy](evidencias/04_trivy_bloqueio.svg)
 
+[Log usado na evidência](logs/04_trivy_run11.txt)
+
 ## 5. Como cada barreira protege a entrega
 
 **Gitleaks:** evita que chaves, tokens e credenciais sejam incorporados ao histórico do repositório.
@@ -88,7 +96,7 @@ A sabotagem usa deliberadamente uma imagem antiga apenas para a prova. O Trivy d
 
 As três verificações funcionam como gates independentes. A `main` passa quando o projeto está dentro da política, enquanto as branches de sabotagem provam que cada tipo de problema é detectado e bloqueado automaticamente.
 
-As evidências visuais deste documento foram produzidas a partir dos trechos oficiais dos logs das execuções identificadas pelos Run IDs acima.
+As evidências visuais deste documento foram produzidas com trechos reais dos logs oficiais retornados pelo GitHub Actions. Cada evidência informa o Run ID e mantém um arquivo `.txt` em `docs/logs/` com os mesmos trechos para conferência. Elas não são apresentadas como captura literal da interface do navegador.
 
 ## PDF
 

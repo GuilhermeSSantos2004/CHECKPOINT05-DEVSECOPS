@@ -28,7 +28,7 @@ O workflow [`.github/workflows/security.yml`](.github/workflows/security.yml) ex
 
 A execução limpa da `main` passou nos três jobs:
 
-- [Run #12 - main final limpa](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38663076725)
+- [Run #13 - main final limpa](https://github.com/GuilhermeSSantos2004/CHECKPOINT05-DEVSECOPS/actions/runs/38664072536)
 
 As sabotagens foram mantidas em branches separadas para preservar a `main` segura:
 
@@ -38,7 +38,11 @@ As sabotagens foram mantidas em branches separadas para preservar a `main` segur
 
 > Os segredos usados na sabotagem são propositalmente falsos e não correspondem a nenhuma conta real.
 
-## Evidências
+## Evidências reais do GitHub Actions
+
+As imagens abaixo foram refeitas usando **trechos reais dos logs oficiais das execuções**, com Run ID e link direto para o GitHub Actions. Os mesmos trechos também estão salvos em `docs/logs/` para conferência.
+
+> Observação: são evidências visuais geradas a partir do log oficial retornado pelo GitHub, e não uma captura de tela do navegador.
 
 ### Pipeline limpo
 
@@ -78,11 +82,16 @@ Acesse `http://localhost:8080`.
 ├── docs/
 │   ├── CP05_RELATORIO_EVIDENCIAS.pdf
 │   ├── RELATORIO_EVIDENCIAS.md
-│   └── evidencias/
-│       ├── 01_main_sucesso.svg
-│       ├── 02_gitleaks_bloqueio.svg
-│       ├── 03_semgrep_bloqueio.svg
-│       └── 04_trivy_bloqueio.svg
+│   ├── evidencias/
+│   │   ├── 01_main_sucesso.svg
+│   │   ├── 02_gitleaks_bloqueio.svg
+│   │   ├── 03_semgrep_bloqueio.svg
+│   │   └── 04_trivy_bloqueio.svg
+│   └── logs/
+│       ├── 01_main_run13.txt
+│       ├── 02_gitleaks_run9.txt
+│       ├── 03_semgrep_run8.txt
+│       └── 04_trivy_run11.txt
 ├── site/
 │   ├── index.html
 │   ├── styles.css
